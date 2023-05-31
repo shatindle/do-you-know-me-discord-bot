@@ -14,7 +14,7 @@ async function isMemberAlready(interaction, assign) {
 
     let highestRole = interaction.member.roles.highest;
 
-    if (highestRole && guestRole.position > highestRole.position) {
+    if (highestRole && guestRole.position < highestRole.position) {
         // user cannot complete this, they already have a higher role
         interaction.reply({
             content: "You already have a role higher than the guest role, you cannot complete this questionaire.",
