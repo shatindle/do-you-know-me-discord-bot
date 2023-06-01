@@ -14,7 +14,6 @@ const {
 } = require("../logic/helper");
 
 const PRIVATE_CHAT = process.env.PRIVATE_CHAT;
-const GUEST_ROLE = process.env.GUEST_ROLE;
 
 /**
  * @description Create a modal to interview the user
