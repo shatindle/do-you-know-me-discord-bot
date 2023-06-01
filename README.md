@@ -5,7 +5,7 @@ A bot to interview new joiners and decide what roles they should get
 You will need at least Node.js v16.9.0 to run this bot.
 
 ### Steps
-Clone the source code, then add a .env with the following and fill out the variables with the appropriate values:
+Clone the source code, then add a file called .env with the following and fill out the variables with the appropriate values:
 ```
 TOKEN=your discord bot token
 GUILD_ID=your server ID
