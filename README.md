@@ -1,30 +1,29 @@
 # do-you-know-me-discord-bot
 A bot to interview new joiners and decide what roles they should get
 
-## original brief
+## Setting up the bot
+You will need at least Node.js v16.9.0 to run this bot.
 
-- Guest
--- click -> add the guest role to the user
+### Steps
+Clone the source code, then add a .env with the following and fill out the variables with the appropriate values:
+```
+TOKEN=your discord bot token
+GUILD_ID=your server ID
+PRIVATE_CHAT=your approval chat ID
+GUEST_ROLE=the guest role to assign users who interact with the first buttons
+WELCOME_CHAT=the chat users first see that will contain the welcome Guest/I know you buttons
+HIGHEST_ROLE=the highest role ID you want to assign users in your role list
+LOWEST_ROLE=the lowest role ID you want to assign users in your role list, note that you can pick roles between highest and lowest (inclusive)
+```
 
-- I know You
--- open a modal
---- IRL name question
---- a sentence about how you know this person
+Create a bot on [discord.com](https://discord.com/developers/applications) and invite it to your server with the following permissions:
+- Manage Roles
+- Send Messages
+- Embed Links
 
--- send { irlName, howYouKnowMe } to private channel as an embed with a red? color, include user ID in text output, add accept/deny buttons
+Once the bot is setup and added to your server:
+- Run `npm install`
+- Run `node ./setup.js` one time to create the welcome modal
+- Run the bot via `node ./index.js` or via your favorite process manager
 
-
--- assign guest role to user
-
-
--- if you click accept
---- modal to choose their role they get
---- assign the role to the user
---- edit the original text to say complete
---- change embed color to green (assuming that's possible, I've never tried to change an embed's color)
-
---- bot DMs the user that they've been accepted
-
--- if you click deny
---- modal to type a custom response (or leave blank for default response)
---- bot DMs the user that they've been denied (with custom response)
+The bot will then interact with your users and interview them.  You can decide to grant higher permissions to anyone you recognize.  All interview responses start with a red border.  They will change to green if you approve them and black if you deny them.
